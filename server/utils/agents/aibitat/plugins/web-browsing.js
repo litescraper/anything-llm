@@ -680,7 +680,7 @@ const webBrowsing = {
               }"`
             );
             const { response, error } = await fetch(
-              "https://google.serper.dev/search",
+              `${(process.env.AGENT_SERPER_DEV_BASE_URL || "https://google.serper.dev").replace(/\/+$/, "")}/search`,
               {
                 method: "POST",
                 headers: {
